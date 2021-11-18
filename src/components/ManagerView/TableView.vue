@@ -2,7 +2,7 @@
   <div class="table-responsive">
     <table class="table">
       <tbody>
-        <tr v-for="(manager, mIndex) in managers"
+        <tr v-for="(manager, mIndex) in getManagers"
             :key="mIndex"
             @click="toggleManagerSelection(mIndex)"
             class="table-bg h-16"
@@ -32,7 +32,12 @@
 <script>
 export default {
   name: "TableView",
-  props: ['managers', 'managerSelection'],
+  props: ['managers', 'managerSelection', 'searchParams'],
+  computed: {
+    getManagers() {
+      return this.managers;
+    }
+  },
   methods: {
     toggleManagerSelection(index) {
       this.$emit("toggleManagerSelection", index);
