@@ -2,13 +2,13 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 col-sm-12" v-if="sidebar">
-        <sidebar @toggleSidebar="toggleSidebar" />
+        <sidebar @toggleSidebar="toggleSidebar" @prepareSearch="prepareSearch" />
       </div>
-      <div class="col-md-9 relative pr-5 col-sm-12 px-4 min-h100vh" :class="{'col-md-12': !sidebar}">
+      <div class="col-md-9 relative pr-5 col-sm-12 px-5 min-h100vh" :class="{'col-md-12': !sidebar}">
         <div class="absolute sidebar-inner-toggler" v-if="!sidebar">
-          <button class="btn btn-white btn-sm px-2 fs-18 bg-purple inner-toggle-btn text-white" @click="toggleSidebar()"><i class="fa fa-arrow-right"></i></button>
+          <button class="btn btn-white btn-sm px-2 fs-18 bg-purple inner-toggle-btn text-white" @click="toggleSidebar()"><i class="fa fa-chevron-right"></i></button>
         </div>
-        <manager-list />
+        <manager-list ref="manager_list" />
       </div>
     </div>
   </div>
@@ -31,6 +31,9 @@ export default {
   methods: {
     toggleSidebar() {
       this.sidebar = !this.sidebar;
+    },
+    prepareSearch(params) {
+      this.$refs.manager_list.setSearchParams(params);
     }
   }
 }

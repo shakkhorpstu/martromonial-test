@@ -12,14 +12,14 @@
             <h2 class="fs-14 text-black none-margin">{{ manager.name }}</h2>
             <p class="fs-14 text-black none-margin">{{ manager.country }}, {{ manager.city }}, {{ manager.year }} Yrs, {{ manager.religion }}</p>
             <div class="mt-2">
-              <span class="badge bg-purple text-white px-2 cursor-pointer"><i class="fa fa-star"></i> Shortlist</span>
-              <span class="badge bg-purple text-white px-2 cursor-pointer ml-2"><i class="fa fa-users"></i> Teamlist</span>
-              <span class="badge bg-purple text-white px-2 cursor-pointer ml-2"><i class="fa fa-user-plus"></i> Connect</span>
-              <span class="badge bg-pink text-white px-2 cursor-pointer ml-2"><i class="fa fa-ban"></i> Block</span>
+              <span class="badge bg-purple text-white px-2 cursor-pointer br-10"><i class="fa fa-star"></i> Shortlist</span>
+              <span class="badge bg-purple text-white px-2 cursor-pointer ml-2 br-10"><i class="fa fa-users"></i> Teamlist</span>
+              <span class="badge bg-purple text-white px-2 cursor-pointer ml-2 br-10"><i class="fa fa-user-plus"></i> Connect</span>
+              <span class="badge bg-pink text-white px-2 cursor-pointer ml-2 br-10"><i class="fa fa-ban"></i> Block</span>
             </div>
           </div>
         </div>
-        <button class="bg-purple btn btn-sm text-white px-2 mt-2">View Profile</button>
+        <button class="bg-purple btn btn-sm text-white px-2 mt-2 br-10">View Profile</button>
       </div>
     </div>
   </div>

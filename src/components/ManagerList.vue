@@ -2,7 +2,7 @@
   <div>
     <h2 class="fs-36 text-black-olive py-2">Search Result</h2>
     <div class="d-flex justify-content-between items-center">
-      <h2 class="fs-14">Matches for your requirements: 25 results</h2>
+      <h2 class="fs-14">Matches for your requirements: {{ managers.length }} results</h2>
       <div class="d-flex">
         <button class="btn btn-sm bg-purple text-white br-12 btn-b-outline fs-12">Manage Filters <i class="fa fa-list ml-1"></i></button>
         <button class="btn btn-sm bg-purple text-white br-12 ml-2 btn-b-outline fs-12">Advance Search <i class="fa fa-search ml-1"></i></button>
@@ -22,13 +22,13 @@
         </button>
       </div>
       <div class="flex">
-        <span class="badge bg-light-purple text-white fs-12 p-1"
-              v-for="(tag, tagIndex) in tags"
-              :key="tagIndex"
-              :class="{'ml-1': tagIndex > 0}">
-          {{ tag }} <i class="fa fa-times cursor-pointer" @click="removeTag(tagIndex)"></i>
+        <span class="badge bg-light-purple text-white fs-12 p-2 br-10"
+              v-for="(param, paramIndex) in searchParams"
+              :key="paramIndex"
+              :class="{'ml-1': paramIndex > 0}">
+          {{ getValue(param) }} <i class="fa fa-times cursor-pointer" @click="removeTag(paramIndex)"></i>
         </span>
-        <span class="text-pink fs-12 ml-1 border-bottom-pink cursor-pointer">See more</span>
+        <span class="text-pink fs-14 ml-1 border-bottom-pink cursor-pointer">See more</span>
       </div>
     </div>
     <div class="mt-3">
@@ -64,7 +64,8 @@ export default {
         { id: 1, name: 'Justin Sebastian', age: '27', country: 'London', city: 'UK', religion: 'Islam' },
         { id: 1, name: 'Justin Sebastian', age: '27', country: 'London', city: 'UK', religion: 'Islam' },
       ],
-      managerSelection: null
+      managerSelection: null,
+      searchParams: []
     }
   },
   methods: {
@@ -76,6 +77,19 @@ export default {
     },
     toggleManagerSelection(index) {
       this.managerSelection = index;
+    },
+    setSearchParams(params) {
+      this.searchParams = params;
+    },
+    getValue(obj) {
+      if(obj.type === 'age') {
+        return obj.value[0] + ' - ' + obj.value[1];
+      } else if(obj.type === 'fromHeight' || obj.type === 'toHeight') {
+        let value = obj.type === 'fromHeight' ? 'From ' : 'To ';
+        return value + obj.value.feet + '.' + obj.value.inch;
+      } else {
+        return obj.value;
+      }
     }
   }
 }
