@@ -15,7 +15,7 @@
       <button class="btn btn-sm bg-purple br-10 text-white ml-2 btn-b-outline"><i class="fa fa-refresh mr-1" /> Load Saved Search</button>
     </div>
 
-    <div class="d-flex mt-5 items-center w-full justify-content-center px-5">
+    <div class="d-flex mt-5 items-center w-full justify-content-center px-3">
       <h2 class="fs-14 mr-4 mt-1 fs-16">Age</h2>
       <div class="slider-circle bg-light-purple d-flex items-center justify-content-center">
         <i class="fa fa-minus text-purple" />
@@ -35,18 +35,18 @@
     </div>
     <h2 class="text-center text-purple fs-16 mt-2 border-bottom-black-olive pb-4"><b>{{ age[0] }} - {{ age[1] }}</b> <span>years old</span></h2>
 
-    <div class="d-flex items-center px-5 justify-content-between mt-4 border-bottom-black-olive pb-4">
+    <div class="d-flex items-center px-3 justify-content-between mt-4 border-bottom-black-olive pb-4">
       <h2 class="fs-16">Height</h2>
       <div class="d-flex flex-column ml-2">
-        <b><i class="fa fa-chevron-up text-purple cursor-pointer fs-20" @click="fromHeight.feet++" /></b>
-        <h2 class="fs-18 text-center none-margin"><b>{{ fromHeight.feet }}</b></h2>
-        <b><i class="fa fa-chevron-down text-purple cursor-pointer fs-20" @click="fromHeight.feet--" /></b>
+        <b><i class="fa fa-chevron-up text-purple cursor-pointer fs-18" @click="fromHeight.feet++" /></b>
+        <h2 class="fs-16 text-center none-margin"><b>{{ fromHeight.feet }}</b></h2>
+        <b><i class="fa fa-chevron-down text-purple cursor-pointer fs-18" @click="fromHeight.feet--" /></b>
       </div>
       <h2 class="fs-20 ml-2">.</h2>
       <div class="d-flex flex-column ml-2">
-        <b><i class="fa fa-chevron-up text-purple cursor-pointer fs-20" @click="fromHeight.inch++" /></b>
-        <h2 class="fs-18 text-center none-margin"><b>{{ fromHeight.inch }}</b></h2>
-        <b><i class="fa fa-chevron-down text-purple cursor-pointer fs-20" @click="fromHeight.inch--" /></b>
+        <b><i class="fa fa-chevron-up text-purple cursor-pointer fs-18" @click="fromHeight.inch++" /></b>
+        <h2 class="fs-16 text-center none-margin"><b>{{ fromHeight.inch }}</b></h2>
+        <b><i class="fa fa-chevron-down text-purple cursor-pointer fs-18" @click="fromHeight.inch--" /></b>
       </div>
 
       <div class="d-flex flex-column ml-4">
@@ -62,19 +62,19 @@
       </div>
 
       <div class="d-flex flex-column ml-4">
-        <b><i class="fa fa-chevron-up text-purple cursor-pointer fs-20" @click="toHeight.feet++" /></b>
+        <b><i class="fa fa-chevron-up text-purple cursor-pointer fs-18" @click="toHeight.feet++" /></b>
         <h2 class="fs-18 text-center none-margin"><b>{{ toHeight.feet }}</b></h2>
-        <b><i class="fa fa-chevron-down text-purple cursor-pointer fs-20" @click="toHeight.feet--" /></b>
+        <b><i class="fa fa-chevron-down text-purple cursor-pointer fs-18" @click="toHeight.feet--" /></b>
       </div>
       <h2 class="fs-20 ml-2">.</h2>
       <div class="d-flex flex-column ml-2">
-        <b><i class="fa fa-chevron-up text-purple cursor-pointer fs-20" @click="toHeight.inch++" /></b>
-        <h2 class="fs-18 text-center none-margin"><b>{{ toHeight.inch }}</b></h2>
-        <b><i class="fa fa-chevron-down text-purple cursor-pointer fs-20" @click="toHeight.inch--" /></b>
+        <b><i class="fa fa-chevron-up text-purple cursor-pointer fs-18" @click="toHeight.inch++" /></b>
+        <h2 class="fs-16 text-center none-margin"><b>{{ toHeight.inch }}</b></h2>
+        <b><i class="fa fa-chevron-down text-purple cursor-pointer fs-18" @click="toHeight.inch--" /></b>
       </div>
     </div>
 
-    <div class="dropdowns mt-3 mx-5">
+    <div class="dropdowns mt-3 mx-3">
       <criteria v-for="(criteria, cIndex) in criterias"
                 :key="cIndex"
                 :criteria="criteria"
@@ -83,7 +83,7 @@
     </div>
 
     <h3 class="fs-16 text-purple text-center mt-5">Tags</h3>
-    <div class="mt-1 search-tags br-12 mx-5 relative">
+    <div class="mt-1 search-tags br-12 mx-3 relative">
       <vue-tags-input
           v-model="tag"
           :tags="tags"
@@ -97,7 +97,7 @@
       </div>
     </div>
 
-    <div class="mt-5 d-flex justify-content-center px-5">
+    <div class="mt-5 d-flex justify-content-center px-4">
       <button class="btn btn-large bg-purple bg-purple text-white pr-4 btn-b-outline br-10 w-full"><i class="fa fa-search mr-2 ml-2" /> Search</button>
     </div>
     <a href="" class="d-flex text-center mt-2 text-purple align-center">Advanced Search</a>
